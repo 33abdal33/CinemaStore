@@ -6,8 +6,7 @@
     "start": "ng serve --open",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test",
-    "deploy": "ng deploy --repo https://github.com/33abdal33/CinemaStore --base-href https://33abdal33.github.io/CinemaStore/"
+    "test": "ng test"
   },
   "private": true,
   "dependencies": {
