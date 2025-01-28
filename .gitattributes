@@ -1,3 +1,4 @@
 public/Videos/LOS[[:space:]]MEJORES[[:space:]]TRÁILERS[[:space:]]DE[[:space:]]LAS[[:space:]]PELÍCULAS[[:space:]]PRÓXIMAS[[:space:]]2025.mp4 filter=lfs diff=lfs merge=lfs -text
 *.mp4 filter=lfs diff=lfs merge=lfs -text
 LOS[[:space:]]MEJORES[[:space:]]TRÁILERS[[:space:]]DE[[:space:]]LAS[[:space:]]PELÍCULAS[[:space:]]PROXÍMAS[[:space:]]2025.mp4 filter=lfs diff=lfs merge=lfs -text
+Videos/*.mp4 filter=lfs diff=lfs merge=lfs -text
