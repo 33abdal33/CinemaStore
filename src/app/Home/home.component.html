@@ -1,2 +1,45 @@
-<app-header></app-header>
-<app-footer></app-footer>
+<div class="home-container">
+    <app-header></app-header>
+    <div class="content-container">
+        <section class="Hero">
+            <!-- Video de fondo -->
+            <video autoplay [muted]="true" loop class="hero-video">
+                <source src="" type="video/mp4">
+            </video>
+
+            <!-- Contenido superpuesto -->
+            <div class="hero-content">
+                <h1>Bienvenido a CineMax</h1>
+                <p>Descubre los últimos estrenos y vive la experiencia del cine como nunca antes.</p>
+                <a href="#cartelera" class="btn">Ver Cartelera</a>
+            </div>
+        </section>
+        <section class="event-list">
+            <div class="container">
+                <h2>Cartelera</h2>
+                <div class="movies">
+                    <div class="movie">
+                        <img src="movie1.jpg" alt="Pelicula 1">
+                        <h3>Nombre de la Película</h3>
+                        <p>Acción | 120 min</p>
+                        <a href="#compra" class="btn">Comprar Boletos</a>
+                    </div>
+                    <div class="movie">
+                        <img src="movie2.jpg" alt="Pelicula 2">
+                        <h3>Nombre de la Película</h3>
+                        <p>Comedia | 95 min</p>
+                        <a href="#compra" class="btn">Comprar Boletos</a>
+                    </div>
+                    <div class="movie">
+                        <img src="movie3.jpg" alt="Pelicula 3">
+                        <h3>Nombre de la Película</h3>
+                        <p>Drama | 110 min</p>
+                        <a href="#compra" class="btn">Comprar Boletos</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <app-footer></app-footer>
+</div>
