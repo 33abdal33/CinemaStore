@@ -55,9 +55,7 @@
             }
         }
 
-        & .event-list {
-            padding: 2rem 0;
-            background: #fff;
+        & .cartelera {
 
             h2 {
                 text-align: center;
@@ -65,54 +63,16 @@
                 font-size: 2rem;
                 color: #333;
             }
+        }
 
-            & .movies {
-                display: flex;
-                gap: 1.5rem;
-                flex-wrap: wrap;
-                line-height: 1.4;
-                justify-content: center;
-            }
-
-            & .movie {
-                background: #f4f4f4;
-                padding: 1rem;
-                border-radius: 8px;
-                text-align: center;
-                max-width: 300px;
-                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-
-                img {
-                    width: 100%;
-                    border-radius: 8px;
-                }
-
-                h3 {
-                    margin: 1rem 0 0.5rem;
-                    font-size: 1.2rem;
-                }
-
-                p {
-                    margin-bottom: 1rem;
-                    font-size: 1rem;
-                    color: #666;
-                }
-
-                & .btn {
-                    background: #2a9d8f;
-                    color: #fff;
-                    padding: 0.5rem 1rem;
-                    border: none;
-                    text-decoration: none;
-                    border-radius: 5px;
-                    transition: background 0.3s;
-                }
-
-                & .btn:hover {
-                    background: #21867a;
-                }
-            }
-
+        & .event-list {
+            width: 90%;
+            display: flex;
+            max-width: 1200px;
+            margin: 0 auto;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
         }
     }
 
