@@ -1,5 +1,4 @@
 <div class="home-container">
-    <button></button>
     <app-header></app-header>
     <div class="content-container">
         <section class="Hero">
@@ -20,13 +19,10 @@
         </div>
 
         <section class="event-list">
-            <app-event-card></app-event-card>
-            <app-event-card></app-event-card>
-            <app-event-card></app-event-card>
-            <app-event-card></app-event-card>
-            <app-event-card></app-event-card>
-            <app-event-card></app-event-card>
-
+            <app-event-card [data]="movieTest1"> </app-event-card>
+            <app-event-card [data]="movieTest2"> </app-event-card>
+            <app-event-card [data]="movieTest3"> </app-event-card>
+            <app-event-card [data]="movieTest4"> </app-event-card>
         </section>
     </div>
 
