@@ -21,61 +21,71 @@
         text-align: center;
         max-width: 300px;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
 
 
-    & .superior {
 
-        img {
-            width: 100%;
-            border-radius: 8px;
-        }
-    }
+        & .superior {
 
-    & .middle {
-
-        h3 {
-            margin: 1rem 0 0.5rem;
-            font-size: 1.2rem;
-        }
-    }
-
-    & .bottom {
-
-        & .genre-time-container {
-
-            margin-bottom: 1rem;
-            font-size: 1rem;
-            color: #666;
-
+            img {
+                width: 100%;
+                height: 350px;
+                border-radius: 8px;
+                object-fit: cover;
+            }
         }
 
-        & .button {
+        & .middle {
 
-            & .btn {
-                background: #2a9d8f;
-                color: #fff;
-                padding: 0.5rem 1rem;
-                border: none;
-                text-decoration: none;
-                border-radius: 5px;
-                transition: background 0.3s;
+            margin: -1rem 0 -2rem;
 
+            h3 {
+                margin: 1rem 0.5rem;
+                font-size: 1.2rem;
+            }
+        }
 
+        & .bottom {
+            padding: 1rem;
+            /* Añade padding para dar espacio interno */
+            /* Añade margen superior para separar del contenido anterior */
+            overflow: hidden;
+
+            & .genre-time-container {
+
+                margin-bottom: 1rem;
+                font-size: 1rem;
+                color: #666;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
 
             }
 
-            & .btn:hover {
+            & .button {
 
-                background: #21867a;
+
+                & .btn {
+                    background: #2a9d8f;
+                    color: #fff;
+                    padding: 0.5rem 1rem;
+                    border: none;
+                    text-decoration: none;
+                    border-radius: 5px;
+                    transition: background 0.3s;
+
+                }
+
+                & .btn:hover {
+
+                    background: #21867a;
+                }
+
             }
 
+
+
+
         }
-
-
-
-
     }
-
 
 }
