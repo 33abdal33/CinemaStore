@@ -7,7 +7,7 @@
                 <img [src]="data.imagenUrl" alt="event image" />
             </section>
             <section class="middle">
-                <h3>{{data.title}}</h3>
+                <h3>{{data.title | textLimiter : 30}} </h3>
             </section>
             <section class="bottom">
                 <div class="genre-time-container">
