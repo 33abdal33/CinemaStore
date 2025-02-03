@@ -19,7 +19,9 @@
         </div>
 
         <section class="event-list">
-            <app-event-card *ngFor="let movie of movies" [data]="movie"> </app-event-card>
+            @for (movie of movies; track movie.id) {
+            <app-event-card [data]="movie"> </app-event-card>
+            }
         </section>
     </div>
 
