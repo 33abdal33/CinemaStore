@@ -4,12 +4,13 @@ import { FooterComponent } from "../Shared/components/footer/footer.component";
 import { EventCardComponent } from "../Shared/components/event-card/event-card.component";
 import { HomeService } from "./home.service";
 import { emptyMovie, Movie } from "../Shared/models/movie.model";
-import { NgFor } from "@angular/common";
+import { AsyncPipe, NgFor } from "@angular/common";
+import { map, Observable } from "rxjs";
 
 @Component({
     selector: 'app-home',
     standalone: true,
-    imports: [HeaderComponent, FooterComponent, EventCardComponent, NgFor],
+    imports: [HeaderComponent, FooterComponent, EventCardComponent, NgFor, AsyncPipe],
     templateUrl: './home.component.html',
     styleUrl: './home.component.css',
 })
@@ -17,15 +18,14 @@ import { NgFor } from "@angular/common";
 export class HomeComponent implements OnInit {
     homeService = inject(HomeService);
 
-    movies: Movie[] = [];
+    movies$ = new Observable<Movie[]>();
 
     ngOnInit() {
-        this.homeService.getData().subscribe((response) => {
-
-            this.movies = response.movies;
-
-        });
+        this.movies$ = this.homeService
+            .getData()
+            .pipe(map((response) => response.movies));
     }
+
 }
 
 
