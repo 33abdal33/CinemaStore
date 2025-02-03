@@ -11,14 +11,24 @@ export const routes: Routes = [
     },
     {
         path: 'home',
-        loadComponent: () => import('./Home/home.component').then((m) => m.HomeComponent),
+        loadComponent: () =>
+            import('./Home/home.component').then((m) => m.HomeComponent),
     },
     {
         path: 'login',
-        loadComponent: () => import('./login/login.component').then((m) => m.LoginComponent),
+        loadComponent: () =>
+            import('./login/login.component').then((m) => m.LoginComponent),
     },
     {
         path: 'Register',
-        loadComponent: () => import('./register/register.component').then((m) => m.RegisterComponent),
+        loadComponent: () =>
+            import('./register/register.component').then((m) => m.RegisterComponent),
+    },
+    {
+        path: 'forgot-password',
+        loadComponent: () =>
+            import('./forgot-password/forgot-password.component').then(
+                (m) => m.ForgotPasswordComponent
+            ),
     },
 ];
