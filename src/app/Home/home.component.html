@@ -19,10 +19,7 @@
         </div>
 
         <section class="event-list">
-            <app-event-card [data]="movieTest1"> </app-event-card>
-            <app-event-card [data]="movieTest2"> </app-event-card>
-            <app-event-card [data]="movieTest3"> </app-event-card>
-            <app-event-card [data]="movieTest4"> </app-event-card>
+            <app-event-card *ngFor="let movie of movies" [data]="movie"> </app-event-card>
         </section>
     </div>
 
