@@ -2,13 +2,14 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { HomeApiResponse } from './home.model';
 import { catchError, EMPTY } from 'rxjs';
+import { environment } from '../../environments/environment.development';
 
 @Injectable({
   providedIn: 'root'
 })
 export class HomeService {
 
-  url = 'https://cinemastore.azurewebsites.net/api/Home';
+  url = environment.baseUrl + '/api/Home';
 
   http = inject(HttpClient);
 
