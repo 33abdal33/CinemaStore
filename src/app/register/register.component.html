@@ -1,5 +1,46 @@
 <div class="main-container">
     <app-simple-header></app-simple-header>
-    <p>register works!</p>
+
+    <body>
+        <div class="container">
+
+            <h2>Registro</h2>
+            <form [formGroup]="registerForm">
+                <label>Nombres</label>
+                <input type="text" formControlName="name" required />
+
+                <label>Apellidos</label>
+                <input type="text" formControlName="lastName" required />
+
+                <label>Email</label>
+                <input type="email" formControlName="email" required />
+
+                <label>Edad</label>
+                <input type="number" formControlName="age" required />
+
+                <label>Contraseña</label>
+                <input type="password" [formControl]="registerForm.controls.password" required />
+
+                <label>Confirmar Contraseña</label>
+                <input type="password" [formControl]="registerForm.controls.password" required />
+
+                <label>Documento</label>
+                <select formControlName="documentType" required>
+                    <option value="0">DNI</option>
+                    <option value="1">CE</option>
+                    <option value="2">PASAPORTE</option>
+                    <option value="3">OTROS</option>
+                </select>
+
+                <label>Número de documento</label>
+                <input type="text" formControlName="documentNumber" required />
+
+                <button [disabled]="registerForm.invalid" (click)="register()" class="btn">Registrar</button>
+            </form>
+
+            <p>Si tienes una cuenta <a routerLink="/login">Ingresa</a></p>
+        </div>
+    </body>
+
     <app-footer></app-footer>
 </div>

@@ -13,4 +13,5 @@ export class EventCardComponent {
 
   @Input({ required: true }) data!: Movie;
 
+
 }
