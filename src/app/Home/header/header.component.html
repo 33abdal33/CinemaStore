@@ -5,7 +5,21 @@
             <a href="#">CineMax</a>
 
         </div>
-
+        @if (authService.loggedIn()) {
+        <nav class="nav">
+            <ul>
+                <li><a href="#cartelera">Cartelera</a></li>
+                <li><a href="#promociones">Promociones</a></li>
+                <li><a href="#compra">Compra Boletos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+        <div class="button-container">
+            <button mat-button class="primary" [routerLink]="authService.isAdministrator() ? '/admin' : '/customer'">Mi
+                Cuenta </button>
+            <button mat-button class="secundary" (click)="authService.logout()">Cerrar Sesion</button>
+        </div>
+        }@else {
         <nav class="nav">
             <ul>
                 <li><a href="#cartelera">Cartelera</a></li>
@@ -18,5 +32,7 @@
             <button mat-button class="primary" routerLink="../login">INGRESAR </button>
             <button mat-button class="secundary" routerLink="../Register">REGÍSTRATE</button>
         </div>
+
+        }
     </div>
 </header>
