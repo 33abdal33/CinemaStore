@@ -6,16 +6,16 @@
 
             <h2>Inicio de Sesion</h2>
             <form [formGroup]="loginForm">
-                <label for="login">Email</label>
+                <label>Email</label>
                 <input type="email" formControlName="email" placeholder="Tu correo electrónico" required>
 
-                <label for="Password">Password</label>
-                <input type="password" [formControl]="loginForm.controls.password" placeholder="password" required>
+                <label>Password</label>
+                <input type="password" [formControl]="loginForm.controls.password" required>
 
-                <button type="submit" class="btn">RESTABLECER</button>
+                <button [disabled]="loginForm.invalid" (click)="login()" class="btn">INGRESAR</button>
             </form>
 
-            <p>Si ya tienes una cuenta <a routerLink="/login">ingresa</a></p>
+            <p><a routerLink="/forgot-password">Olvidaste tu contraseña?</a></p>
         </div>
     </body>
 
