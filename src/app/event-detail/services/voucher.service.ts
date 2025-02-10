@@ -14,7 +14,7 @@ export class VoucherService {
   loading = signal(false);
 
   getData(saleId: string): Observable<SaleApiResponse> {
-    const apiUrl = this.baseUrl + '/api/sales/' + saleId;
+    const apiUrl = this.baseUrl + '/api/Sales/' + saleId;
     return this.http.get<SaleApiResponse>(apiUrl).pipe(
       catchError((httpErrorResponse: HttpErrorResponse) => {
         const errorResponse: SaleApiResponse = {
