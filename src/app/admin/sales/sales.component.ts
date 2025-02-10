@@ -16,7 +16,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatDatepickerModule } from '@angular/material/datepicker';
-import { provideNativeDateAdapter } from '@angular/material/core';
+import { provideNativeDateAdapter } from '@Angular/material/core';
 import { FormattedDataModel } from './sales.model';
 import { AsyncPipe } from '@angular/common';
 
