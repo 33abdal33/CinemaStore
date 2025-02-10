@@ -14,7 +14,7 @@ export class AuthService {
   isAdministrator = signal(false);
 
   login(email: string, password: string): Observable<LoginApiResponse> {
-    const apiUrl = this.baseUrl + '/api/users/login';
+    const apiUrl = this.baseUrl + '/api/users/Login';
     const body: LoginRequestBody = { username: email, password };
     return this.http.post<LoginApiResponse>(apiUrl, body).pipe(
       catchError((httpErrorResponse: HttpErrorResponse) => {
@@ -44,7 +44,7 @@ export class AuthService {
   }
 
   register(body: RegisterRequestBody): Observable<RegisterApiResponse> {
-    const apiUrl = this.baseUrl + 'users/Register';
+    const apiUrl = this.baseUrl + '/api/users/register';
     return this.http.post<RegisterApiResponse>(apiUrl, body).pipe(
       catchError((httpErrorResponse: HttpErrorResponse) => {
         const errorResponse: RegisterApiResponse = {

@@ -4,11 +4,13 @@ import { FooterComponent } from "../Shared/components/footer/footer.component";
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import { AuthService } from '../Shared/Service/auth.service';
+import { MatFormField } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [SimpleHeaderComponent, FooterComponent, ReactiveFormsModule, RouterLink],
+  imports: [SimpleHeaderComponent, FooterComponent, ReactiveFormsModule, RouterLink, MatFormField, MatInputModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })

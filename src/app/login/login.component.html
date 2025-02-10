@@ -8,9 +8,21 @@
             <form [formGroup]="loginForm">
                 <label>Email</label>
                 <input type="email" formControlName="email" placeholder="Tu correo electrónico" required>
+                @if (loginForm.controls.email.hasError('email') &&
+                !loginForm.controls.email.hasError('required')) {
+                <mat-error>Ingresa un email válido</mat-error>
+                } @if (loginForm.controls.email.hasError('required')) {
+                <mat-error>Email es <strong>requerido</strong></mat-error>
+                }
 
                 <label>Password</label>
                 <input type="password" [formControl]="loginForm.controls.password" required>
+                @if (loginForm.controls.password.hasError('minlength') &&
+                !loginForm.controls.password.hasError('required')) {
+                <mat-error class="min-length-error">Contraseña debe tener al menos 8 dígitos</mat-error>
+                } @if (loginForm.controls.password.hasError('required')) {
+                <mat-error>Contraseña es <strong>requerida</strong></mat-error>
+                }
 
                 <button [disabled]="loginForm.invalid" (click)="login()" class="btn">INGRESAR</button>
             </form>

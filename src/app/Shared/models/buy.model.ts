@@ -5,6 +5,6 @@ export interface BuyApiResponse {
 }
 
 export interface BuyRequestBody {
-    concertId: string;
+    movieId: string;
     ticketsQuantity: string;
 }

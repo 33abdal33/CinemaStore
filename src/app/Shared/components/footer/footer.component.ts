@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { MatButtonModule } from '@Angular/material/button';
+import { MatButtonModule } from '@angular/material/button';
 @Component({
   selector: 'app-footer',
   standalone: true,
-  imports: [MatButtonModule],
+  imports: [],
   templateUrl: './footer.component.html',
   styleUrl: './footer.component.css'
 })
