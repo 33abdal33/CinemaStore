@@ -1,9 +1,4 @@
-<<<<<<< HEAD
 <div style="
-=======
-<div
-  style="
->>>>>>> a6ddba712983676e4b05296e23afda27c2c38a6c
     width: 240px;
     height: 360px;
     display: flex;
@@ -12,20 +7,12 @@
     align-items: center;
     background-color: var(--secondary-color);
     padding: 20px;
-<<<<<<< HEAD
   ">
   <section style="
-=======
-  "
->
-  <section
-    style="
->>>>>>> a6ddba712983676e4b05296e23afda27c2c38a6c
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-<<<<<<< HEAD
     ">
     <span style="color: black; text-align: center; font-size: 24px">
       {{ data.title }}
@@ -35,86 +22,29 @@
       <span style="color: var(--accent-color)">S/{{ data.unitPrice.toFixed(2) }}</span></span>
   </section>
   <form style="
-=======
-    "
-  >
-    <span
-      style="color: var(--primary-color); text-align: center; font-size: 24px"
-    >
-      {{ data.title }}
-    </span>
-    <br />
-    <span style="font-size: 18px; color: white; font-weight: 500"
-      >PRECIO:
-      <span style="color: var(--accent-color)"
-        >S/{{ data.unitPrice.toFixed(2) }}</span
-      ></span
-    >
-  </section>
-  <form
-    style="
->>>>>>> a6ddba712983676e4b05296e23afda27c2c38a6c
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-<<<<<<< HEAD
     ">
     <mat-form-field appearance="outline">
       <mat-label>Cantidad</mat-label>
       <input matInput type="number" ngModel name="quantity" #quantity="ngModel" max="10" required />
       @if(quantity.errors?.['required']){
       <mat-error>Campo <b>requerido</b></mat-error>} @if(!quantity.errors?.['required'] && quantity.errors?.['max']){
-=======
-    "
-  >
-    <mat-form-field appearance="outline">
-      <mat-label>Cantidad</mat-label>
-      <input
-        matInput
-        type="number"
-        ngModel
-        name="quantity"
-        #quantity="ngModel"
-        max="10"
-        required
-      />
-      @if(quantity.errors?.['required']){
-      <mat-error>Campo <b>requerido</b></mat-error
-      >} @if(!quantity.errors?.['required'] && quantity.errors?.['max']){
->>>>>>> a6ddba712983676e4b05296e23afda27c2c38a6c
       <mat-error><b>10 Compras</b> como máximo</mat-error>}
     </mat-form-field>
     <br />
     <div>
-<<<<<<< HEAD
-      <span style="font-size: 18px; color: black; font-weight: 500">TOTAL: S/{{ data.unitPrice * (quantity.value ?
+      <span style="font-size: 18px; color: white; font-weight: 500">TOTAL: S/{{ data.unitPrice * (quantity.value ?
         quantity.value : 0) }}
-=======
-      <span style="font-size: 18px; color: white; font-weight: 500"
-        >TOTAL: S/{{ data.unitPrice * (quantity.value ? quantity.value : 0) }}
->>>>>>> a6ddba712983676e4b05296e23afda27c2c38a6c
       </span>
     </div>
   </form>
   <section style="width: 100%">
-<<<<<<< HEAD
     <button style="width: 100%" mat-raised-button color="primary" [disabled]="quantity.invalid"
       (click)="buyTickets(quantity.value)">
       PAGAR
     </button>
   </section>
 </div>
-=======
-    <button
-      style="width: 100%"
-      mat-raised-button
-      color="primary"
-      [disabled]="quantity.invalid"
-      (click)="buyTickets(quantity.value)"
-    >
-      PAGAR
-    </button>
-  </section>
-</div>
->>>>>>> a6ddba712983676e4b05296e23afda27c2c38a6c
