@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { MatButtonModule } from '@Angular/material/button';
+import { MatButtonModule } from '@angular/material/button';
 import { RouterLink } from '@angular/router';
 import { AuthService } from '../../Shared/Service/auth.service';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';

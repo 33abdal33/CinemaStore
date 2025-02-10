@@ -4,11 +4,12 @@ import { FooterComponent } from "../Shared/components/footer/footer.component";
 import { FormsModule, NgForm } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { AuthService } from '../Shared/Service/auth.service';
+import { MatInputModule } from '@angular/material/input';
 
 @Component({
   selector: 'app-forgot-password',
   standalone: true,
-  imports: [SimpleHeaderComponent, FooterComponent, FormsModule, RouterLink],
+  imports: [SimpleHeaderComponent, FooterComponent, FormsModule, RouterLink, MatInputModule],
   templateUrl: './forgot-password.component.html',
   styleUrl: './forgot-password.component.css'
 })

@@ -20,7 +20,7 @@
 
         <section class="event-list">
             @for (movie of filteredConcerts$ | async; track $index) {
-            <app-event-card [data]="movie"> </app-event-card>
+            <app-event-card [data]="movie" [routerLink]="'/event-detail/' + movie.id"> </app-event-card>
             }
         </section>
     </div>
