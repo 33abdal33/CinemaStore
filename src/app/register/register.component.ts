@@ -5,6 +5,7 @@ import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } 
 import { RouterLink } from '@angular/router';
 import { AuthService } from '../Shared/Service/auth.service';
 import { RegisterRequestBody } from '../Shared/models/auth.model';
+import { NotificationsService } from 'angular2-notifications';
 
 @Component({
   selector: 'app-register',
@@ -28,6 +29,8 @@ export class RegisterComponent {
   });
 
   authService = inject(AuthService);
+  notifications = inject(NotificationsService);
+
   register() {
     const body: RegisterRequestBody = {
       documentNumber: this.registerForm.controls.documentNumber.value!,
@@ -47,13 +50,13 @@ export class RegisterComponent {
         // Redirect to the customer page
 
         console.log('Register successful');
-        alert('Registro exitoso' + '\n' + 'Bienvenido');
+        this.notifications.success('Registro exitoso', 'Bienvenido');
 
       } else {
         // Display an error notification
 
         console.log('Register failed');
-        alert('Registro fallido' + '\n' + 'Intenta otra vez');
+        this.notifications.warn('Registro fallido', 'Intenta otra vez');
       }
     });
   }

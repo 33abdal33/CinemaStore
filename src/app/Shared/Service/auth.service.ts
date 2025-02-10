@@ -3,6 +3,7 @@ import { catchError, EMPTY, Observable, of } from 'rxjs';
 import { ForgotPasswordApiResponse, ForgotPasswordRequestBody, LoginApiResponse, LoginRequestBody, RegisterApiResponse, RegisterRequestBody } from '../models/auth.model';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { environment } from '../../../environments/environment.development';
+import { NotificationsService } from 'angular2-notifications';
 
 @Injectable({
   providedIn: 'root'
@@ -28,11 +29,13 @@ export class AuthService {
     );
   }
 
+  notifications = inject(NotificationsService)
+
   logout() {
     localStorage.clear();
     this.loggedIn.set(false);
     this.isAdministrator.set(false);
-    alert('Logout exitoso' + '\n' + 'Hasta luego');
+    this.notifications.success('Logout exitoso', 'Hasta luego');
   }
 
   verifyLocalStorage() {

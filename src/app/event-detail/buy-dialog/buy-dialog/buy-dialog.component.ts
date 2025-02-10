@@ -10,6 +10,7 @@ import { FooterComponent } from "../../../Shared/components/footer/footer.compon
 import { MatFormField, MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
+import { NotificationsService } from 'angular2-notifications';
 
 @Component({
   selector: 'app-buy-dialog',
@@ -27,6 +28,8 @@ export class BuyDialogComponent {
   buyService = inject(BuyService);
   matDialogRef = inject(MatDialogRef);
 
+  notifications = inject(NotificationsService);
+
   buyTickets(quantity: number) {
     this.buyService
       .buy(this.data.id.toString(), quantity.toString())
@@ -34,7 +37,7 @@ export class BuyDialogComponent {
         if (response.success) {
           this.matDialogRef.close(response.data);
         } else {
-          alert(response.errorMessage);
+          this.notifications.error('Error', response.errorMessage);
         }
       });
   }
