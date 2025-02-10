@@ -13,9 +13,9 @@ export class BuyService {
 
   loading = signal(false);
 
-  buy(concertId: string, ticketsQuantity: string): Observable<BuyApiResponse> {
-    const apiUrl = this.baseUrl + '/api/sales';
-    const body: BuyRequestBody = { concertId, ticketsQuantity };
+  buy(movieId: string, ticketsQuantity: string): Observable<BuyApiResponse> {
+    const apiUrl = this.baseUrl + '/api/Sales';
+    const body: BuyRequestBody = { movieId, ticketsQuantity };
     return this.http.post<BuyApiResponse>(apiUrl, body).pipe(
       catchError((httpErrorResponse: HttpErrorResponse) => {
         const errorResponse: BuyApiResponse = {
