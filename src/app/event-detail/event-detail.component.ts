@@ -1,23 +1,34 @@
-import { Component, inject, OnInit } from '@angular/core';
-import { SimpleHeaderComponent } from "../Shared/components/simple-header/simple-header.component";
-import { FooterComponent } from "../Shared/components/footer/footer.component";
+import { Component, OnInit, inject } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { MatDialog } from '@angular/material/dialog';
-import { Observable, map } from 'rxjs';
-import { VoucherDialogComponent } from '../Shared/components/voucher-dialog/voucher-dialog.component';
-import { AuthService } from '../Shared/Service/auth.service';
-import { BuyDialogComponent } from './buy-dialog/buy-dialog/buy-dialog.component';
 import { EventDetailService } from './services/event-detail.service';
-import { Movie } from '../Shared/models/movie.model';
-import { EventCardComponent } from '../Shared/components/event-card/event-card.component';
+import { Observable, map } from 'rxjs';
+
 import { AsyncPipe } from '@angular/common';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDialog } from '@angular/material/dialog';
+
+
+
+import { Movie } from '../Shared/models/movie.model';
+import { AuthService } from '../Shared/Service/auth.service';
+import { VoucherDialogComponent } from '../Shared/components/voucher-dialog/voucher-dialog.component';
+import { EventCardComponent } from '../Shared/components/event-card/event-card.component';
+import { BuyDialogComponent } from './buy-dialog/buy-dialog/buy-dialog.component';
+import { SimpleHeaderComponent } from '../Shared/components/simple-header/simple-header.component';
+import { FooterComponent } from '../Shared/components/footer/footer.component';
 
 @Component({
   selector: 'app-event-detail',
   standalone: true,
-  imports: [SimpleHeaderComponent, FooterComponent, EventCardComponent, AsyncPipe],
+  imports: [
+    SimpleHeaderComponent,
+    FooterComponent,
+    EventCardComponent,
+    AsyncPipe,
+    MatButtonModule,
+  ],
   templateUrl: './event-detail.component.html',
-  styleUrl: './event-detail.component.css'
+  styleUrl: './event-detail.component.css',
 })
 export class EventDetailComponent implements OnInit {
   eventId = '';
@@ -29,13 +40,13 @@ export class EventDetailComponent implements OnInit {
 
   data$ = new Observable<Movie>();
 
-  concertData: Movie | undefined;
+  movieData: Movie | undefined;
 
   ngOnInit() {
     this.eventId = this.activatedRoute.snapshot.paramMap.get('id')!;
     this.data$ = this.eventDetailService.getData(this.eventId).pipe(
       map((response) => {
-        this.concertData = response.data;
+        this.movieData = response.data;
         return response.data;
       })
     );
@@ -58,7 +69,7 @@ export class EventDetailComponent implements OnInit {
       return;
     }
     const buyDialogRef = this.matDialog.open(BuyDialogComponent, {
-      data: this.concertData,
+      data: this.movieData,
     });
     buyDialogRef.afterClosed().subscribe((saleId) => {
       if (saleId) {
