@@ -1,1 +1,7 @@
-<p>reports works!</p>
+<button (click)="loadRealData()">Cargar Datos</button>
+<div class="container">
+    <div class="ruleta">
+        <canvas baseChart [data]="pieChartData" [type]="pieChartType">
+        </canvas>
+    </div>
+</div>
