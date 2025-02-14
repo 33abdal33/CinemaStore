@@ -25,4 +25,10 @@ export class AppComponent {
 
   };
 
+  constructor() {
+    const authService = inject(AuthService);
+    authService.verifyLocalStorage();
+
+  }
+
 }
