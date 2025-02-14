@@ -21,7 +21,7 @@ import { RouterLink } from "@angular/router";
 
 export class HomeComponent implements OnInit {
     genres$ = new Observable<Genre[]>();
-    filteredConcerts$ = new Observable<Movie[]>();
+    filteredMovies$ = new Observable<Movie[]>();
 
     homeService = inject(HomeService);
     searchBarService = inject(SearchBarService);
@@ -50,7 +50,7 @@ export class HomeComponent implements OnInit {
             )
         );
 
-        this.filteredConcerts$ = combineLatest([
+        this.filteredMovies$ = combineLatest([
             filterByGenre$,
             this.searchBarService.currentValue$,
         ]).pipe(

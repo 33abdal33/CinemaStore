@@ -15,9 +15,10 @@
             </ul>
         </nav>
         <div class="button-container">
-            <button mat-button class="primary" [routerLink]="authService.isAdministrator() ? '/admin' : '/customer'">Mi
-                Cuenta </button>
-            <button mat-button class="secundary" (click)="authService.logout()">Cerrar Sesion</button>
+            <button mat-button class="primary" [routerLink]="authService.isAdministrator() ? '/admin' : '/customer'">
+                Menu
+            </button>
+            <button mat-button class="secondary" (click)="authService.logout()">Cerrar Sesion</button>
         </div>
         }@else {
         <nav class="nav">
@@ -30,7 +31,7 @@
         </nav>
         <div class="button-container">
             <button mat-button class="primary" routerLink="../login">INGRESAR </button>
-            <button mat-button class="secundary" routerLink="../Register">REGÍSTRATE</button>
+            <button mat-button class="secondary" routerLink="../Register">REGÍSTRATE</button>
         </div>
 
         }
