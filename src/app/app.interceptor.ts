@@ -20,9 +20,6 @@ export const jwtInterceptor: HttpInterceptorFn = (req, next) => {
   let clonedRequest = req;
   const token = localStorage.getItem('token');
   if (token) {
-    const auth = inject(AuthService);
-    auth.loggedIn.set(true);
-    auth.isAdministrator.set(false);
     clonedRequest = req.clone(
       {
         headers: req.headers.set('Authorization', `Bearer ${token}`),

@@ -3,7 +3,7 @@ import { HttpInterceptorFn } from '@angular/common/http';
 
 import { loggerInterceptor } from './app.interceptor';
 
-describe('appInterceptor', () => {
+describe('loggerInterceptor', () => {
   const interceptor: HttpInterceptorFn = (req, next) =>
     TestBed.runInInjectionContext(() => loggerInterceptor(req, next));
 
