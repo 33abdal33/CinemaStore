@@ -21,10 +21,12 @@
     "@angular/platform-browser": "^18.0.0",
     "@angular/platform-browser-dynamic": "^18.0.0",
     "@angular/router": "^18.0.0",
+    "@types/pdfmake": "^0.2.11",
     "angular2-notifications": "^16.0.1",
     "chart.js": "^4.3.0",
     "ng2-charts": "^7.0.0",
     "ngx-spinner": "^17.0.0",
+    "pdfmake": "^0.2.18",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.3"

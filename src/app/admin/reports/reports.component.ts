@@ -1,6 +1,10 @@
 import { Component, ViewChild } from '@angular/core';
 import { ChartConfiguration, ChartData, ChartType } from 'chart.js';
 import { BaseChartDirective } from 'ng2-charts';
+import pdfMake from 'pdfmake/build/pdfmake';
+import pdfFonts from 'pdfmake/build/vfs_fonts';
+import { TDocumentDefinitions } from 'pdfmake/interfaces';
+pdfMake.vfs = pdfFonts.vfs;
 
 @Component({
   selector: 'app-reports',
@@ -24,5 +28,16 @@ export class ReportsComponent {
   loadRealData() {
     this.pieChartData.datasets[0].data = [100, 200, 300];
     this.chart?.update();
+  }
+
+  downloadPDF() {
+    const data: TDocumentDefinitions = {
+      content: [
+        'First Paragraph',
+        'afaksdljfkaslfjdifjsfosfpoasfjdisofnf dj jfidof jdsif dsaasifdiosfdsifoas'
+      ]
+
+    };
+    pdfMake.createPdf(data).download();
   }
 }
