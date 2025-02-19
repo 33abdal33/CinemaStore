@@ -4,12 +4,13 @@ import { BaseChartDirective } from 'ng2-charts';
 import pdfMake from 'pdfmake/build/pdfmake';
 import pdfFonts from 'pdfmake/build/vfs_fonts';
 import { TDocumentDefinitions } from 'pdfmake/interfaces';
+import { LoginComponent } from "../../login/login.component";
 pdfMake.vfs = pdfFonts.vfs;
 
 @Component({
   selector: 'app-reports',
   standalone: true,
-  imports: [BaseChartDirective],
+  imports: [BaseChartDirective, LoginComponent],
   templateUrl: './reports.component.html',
   styleUrl: './reports.component.css'
 })
